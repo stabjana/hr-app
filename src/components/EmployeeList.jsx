@@ -9,8 +9,8 @@ function List() {
                 <Card name="Dave" inirole="Teacher" department="ICT" superior="Vera" salary="4000"></Card>
                 <Card name="Margit" inirole="Teacher" department="ICT" superior="Vera" salary="5000"></Card>
                 <Card name="Nils" inirole="Fun Manager" department="ICT" superior="Vera" salary="4000"></Card>
-                <Card name="Emma" inirole="" department="ICT" superior="Vera" salary="4000"></Card>
-                <Card name="Felix" inirole="teacher" department="ICT" superior="Vera" salary="4000"></Card>
+                <Card name="Emma" inirole="Boss" department="ICT" superior="Vera" salary="4000"></Card>
+                <Card name="Felix" inirole="Teacher" department="ICT" superior="Vera" salary="4000"></Card>
             </div>
         </main>
     );
