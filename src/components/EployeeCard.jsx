@@ -3,10 +3,10 @@ import { useState } from 'react';
 
 function Card(props) {
     // need useState to render!
-    const [role, setRole] = useState(props.inirole)
+    const [role, setRole] = useState(props.role)
     const clickHandler = () => {
         if (role === "Team Lead") {
-            setRole(props.inirole);
+            setRole(props.role);
         }
         else {
             setRole("Team Lead");
@@ -15,6 +15,7 @@ function Card(props) {
 
     return (
         <div className="card">
+            <p className="promoStar"> {role === "Team Lead" && "⭐"} </p>
             <p>{props.name}</p>
             <p>{props.role}</p>
             <p>{props.department}</p>
@@ -24,14 +25,6 @@ function Card(props) {
             <p>Trainings: {props.trainings}</p>
             <p>Performance Grade: {props.performanceGrade}</p>
             <button onClick={clickHandler}>Promote</button>
-
-            {/* 
-            <h3>Name: {props.name}</h3>
-            <p>Role: {role}</p>
-            <p>Department: {props.department}</p>
-            <p>Direct superior: {props.superior}</p>
-            <p>Salary: {props.salary}</p>
-            <button onClick={clickHandler}>Promote</button> */}
         </div>
     );
 };
