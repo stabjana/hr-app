@@ -24,6 +24,11 @@ function Card(props) {
                 <p>Emergency Contact: {props.emergencyContact}</p>
                 <p>Trainings: {props.trainings}</p>
                 <p>Performance Grade: {props.performanceGrade}</p>
+                <p>Years worked here: {Math.floor(calculateYears(props.startDate))}</p>
+                {calculateYears(props.startDate) < 0.5 && <p>📆  Schedule probation review.</p>}
+                {Math.floor(calculateYears(props.startDate)) === 5 && <p> 🎉 Schedule recognition meeting.</p>}
+                {Math.floor(calculateYears(props.startDate)) === 10 && <p> 🎉 Schedule recognition meeting.</p>}
+                {Math.floor(calculateYears(props.startDate)) === 15 && <p> 🎉 Schedule recognition meeting.</p>}
                 <button onClick={clickHandler}>Demote from Team Lead</button>
             </div>
         )
@@ -40,10 +45,17 @@ function Card(props) {
                 <p>Emergency Contact: {props.emergencyContact}</p>
                 <p>Trainings: {props.trainings}</p>
                 <p>Performance Grade: {props.performanceGrade}</p>
+                <p>Years worked here: {Math.floor(calculateYears(props.startDate))}</p>
                 <button onClick={clickHandler}>Promote to Team Lead</button>
             </div>
         )
     };
 };
+const calculateYears = (startDate) => {
+    const start = new Date(startDate);
+    const today = new Date();
+    return ((today - start) / 1000 / 60 / 60 / 24 / 365);
+}
+
 
 export default Card;
