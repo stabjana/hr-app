@@ -1,4 +1,5 @@
 import Card from "./EployeeCard";
+import employees from "./EmployeesData";
 import './employee.css'
 
 function List() {
@@ -6,13 +7,9 @@ function List() {
         <main>
             <h2>Employee List</h2>
             <div className="employeeList">
-                <Card name="Dave" inirole="Teacher" department="ICT" superior="Vera" salary="4000"></Card>
-                <Card name="Margit" inirole="Teacher" department="ICT" superior="Vera" salary="5000"></Card>
-                <Card name="Nils" inirole="Fun Manager" department="ICT" superior="Vera" salary="4000"></Card>
-                <Card name="Emma" inirole="Boss" department="ICT" superior="Vera" salary="4000"></Card>
-                <Card name="Felix" inirole="Teacher" department="ICT" superior="Vera" salary="4000"></Card>
+                {employees.map((el) => < Card key={el.id} name={el.name} role={el.role} department={el.department} startDate={el.startDate} location={el.location} emergencyContact={el.emergencyContact} trainings={el.trainings} performanceGrade={el.performanceGrade} ></Card>)};
             </div>
-        </main>
+        </main >
     );
 };
 

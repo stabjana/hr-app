@@ -62,7 +62,7 @@ const employees = [
     {
         id: 6,
         name: "Michael Tran",
-        role: "IT Support Specialist",
+        role: "Full Stack Developer",
         department: "IT Support",
         superior: "Linus Torvalds",
         startDate: "2018-05-03",
@@ -74,7 +74,7 @@ const employees = [
     {
         id: 7,
         name: "Avery Carson",
-        role: "Network Engineer",
+        role: "Full Stack Developer",
         department: "IT Support",
         superior: "Linus Torvalds",
         startDate: "2016-08-14",
@@ -119,4 +119,6 @@ const employees = [
         trainings: "Linux Server Management",
         performanceGrade: "9"
     }
-]
+];
+
+export default employees;
