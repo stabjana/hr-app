@@ -12,44 +12,27 @@ function Card(props) {
             setRole("Team Lead");
         }
     };
-    if (role === "Team Lead") {
-        return (
-            <div className="card">
-                <p className="promoStar"> {role === "Team Lead" && "⭐"} </p>
-                <p>{props.name}</p>
-                <p>{props.role}</p>
-                <p>{props.department}</p>
-                <p>Start Date: {props.startDate}</p>
-                <p>Location: {props.location}</p>
-                <p>Emergency Contact: {props.emergencyContact}</p>
-                <p>Trainings: {props.trainings}</p>
-                <p>Performance Grade: {props.performanceGrade}</p>
-                <p>Years worked here: {Math.floor(calculateYears(props.startDate))}</p>
-                {calculateYears(props.startDate) < 0.5 && <p>📆  Schedule probation review.</p>}
-                {Math.floor(calculateYears(props.startDate)) === 5 && <p> 🎉 Schedule recognition meeting.</p>}
-                {Math.floor(calculateYears(props.startDate)) === 10 && <p> 🎉 Schedule recognition meeting.</p>}
-                {Math.floor(calculateYears(props.startDate)) === 15 && <p> 🎉 Schedule recognition meeting.</p>}
-                <button onClick={clickHandler}>Demote from Team Lead</button>
-            </div>
-        )
-    }
-    else {
-        return (
-            <div className="card">
-                <p className="promoStar"> {role === "Team Lead" && "⭐"} </p>
-                <p>{props.name}</p>
-                <p>{props.role}</p>
-                <p>{props.department}</p>
-                <p>Start Date: {props.startDate}</p>
-                <p>Location: {props.location}</p>
-                <p>Emergency Contact: {props.emergencyContact}</p>
-                <p>Trainings: {props.trainings}</p>
-                <p>Performance Grade: {props.performanceGrade}</p>
-                <p>Years worked here: {Math.floor(calculateYears(props.startDate))}</p>
-                <button onClick={clickHandler}>Promote to Team Lead</button>
-            </div>
-        )
-    };
+
+    return (
+        <div className="card">
+            <p className="promoStar"> {role === "Team Lead" && "⭐"} </p>
+            <p>{props.name}</p>
+            <p>{props.role}</p>
+            <p>{props.department}</p>
+            <p>Start Date: {props.startDate}</p>
+            <p>Location: {props.location}</p>
+            <p>Emergency Contact: {props.emergencyContact}</p>
+            <p>Trainings: {props.trainings}</p>
+            <p>Performance Grade: {props.performanceGrade}</p>
+            <p>Years worked here: {Math.floor(calculateYears(props.startDate))}</p>
+            {calculateYears(props.startDate) < 0.5 && <p>📆  Schedule probation review.</p>}
+            {Math.floor(calculateYears(props.startDate)) === 5 && <p> 🎉 Schedule recognition meeting.</p>}
+            {Math.floor(calculateYears(props.startDate)) === 10 && <p> 🎉 Schedule recognition meeting.</p>}
+            {Math.floor(calculateYears(props.startDate)) === 15 && <p> 🎉 Schedule recognition meeting.</p>}
+            {role === "Team Lead" ? <button onClick={clickHandler}>Demote from Team Lead</button> : <button onClick={clickHandler}>Promote to Team Lead</button>}
+
+        </div>
+    )
 };
 const calculateYears = (startDate) => {
     const start = new Date(startDate);
