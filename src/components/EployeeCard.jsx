@@ -12,21 +12,38 @@ function Card(props) {
             setRole("Team Lead");
         }
     };
-
-    return (
-        <div className="card">
-            <p className="promoStar"> {role === "Team Lead" && "⭐"} </p>
-            <p>{props.name}</p>
-            <p>{props.role}</p>
-            <p>{props.department}</p>
-            <p>Start Date: {props.startDate}</p>
-            <p>Location: {props.location}</p>
-            <p>Emergency Contact: {props.emergencyContact}</p>
-            <p>Trainings: {props.trainings}</p>
-            <p>Performance Grade: {props.performanceGrade}</p>
-            <button onClick={clickHandler}>Promote</button>
-        </div>
-    );
+    if (role === "Team Lead") {
+        return (
+            <div className="card">
+                <p className="promoStar"> {role === "Team Lead" && "⭐"} </p>
+                <p>{props.name}</p>
+                <p>{props.role}</p>
+                <p>{props.department}</p>
+                <p>Start Date: {props.startDate}</p>
+                <p>Location: {props.location}</p>
+                <p>Emergency Contact: {props.emergencyContact}</p>
+                <p>Trainings: {props.trainings}</p>
+                <p>Performance Grade: {props.performanceGrade}</p>
+                <button onClick={clickHandler}>Demote from Team Lead</button>
+            </div>
+        )
+    }
+    else {
+        return (
+            <div className="card">
+                <p className="promoStar"> {role === "Team Lead" && "⭐"} </p>
+                <p>{props.name}</p>
+                <p>{props.role}</p>
+                <p>{props.department}</p>
+                <p>Start Date: {props.startDate}</p>
+                <p>Location: {props.location}</p>
+                <p>Emergency Contact: {props.emergencyContact}</p>
+                <p>Trainings: {props.trainings}</p>
+                <p>Performance Grade: {props.performanceGrade}</p>
+                <button onClick={clickHandler}>Promote to Team Lead</button>
+            </div>
+        )
+    };
 };
 
 export default Card;
