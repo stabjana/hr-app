@@ -1,9 +1,9 @@
 import './footer.css'
 
-function Footer(){
+function Footer() {
     return (
         <footer>
-            <p>Copyright &copy; Steffi &heart;</p>
+            <p>Copyright &copy; Steffi</p>
         </footer>
     );
 };
