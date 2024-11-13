@@ -32,8 +32,8 @@ function Card({ name, iniRole, department, startDate, location, emergencyContact
             {Math.floor(calculateYears(startDate)) === 10 && <p> 🎉 Schedule recognition meeting.</p>}
             {Math.floor(calculateYears(startDate)) === 15 && <p> 🎉 Schedule recognition meeting.</p>}
 
-            {role === "Team Lead" ? <Button role="primary" text="Demote" onClick={clickHandler}></Button>
-                : <Button role="secondary" text="Promote" onClick={clickHandler}></Button>}
+            {role === "Team Lead" ? <Button className="primary" text="Demote" onClick={clickHandler}></Button>
+                : <Button className="secondary" text="Promote" onClick={clickHandler}></Button>}
 
         </div>
     )
