@@ -5,10 +5,18 @@
     border-radius: 3%;
 }
 
-.primary {
+.newRole {
     color: rgb(15, 129, 66);
 }
 
-.secondary {
+.iniRole {
     color: rgb(15, 80, 129);
+}
+
+.primary {
+    background-color: rgb(255, 175, 36);
+}
+
+.secondary {
+    background-color: rgb(245, 255, 52);
 }
