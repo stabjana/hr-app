@@ -19,7 +19,7 @@ function Card({ name, iniRole, department, startDate, location, emergencyContact
         <div className="card">
             <p className="promoStar"> {role === "Team Lead" && "⭐"} </p>
             <p>{name}</p>
-            <p>{role}</p>
+            {role === "Team Lead" ? <p className="primary" >{role} </p> : <p className="secondary">{role}</p>}
             <p>{department}</p>
             <p>Start Date: {startDate}</p>
             <p>Location: {location}</p>
@@ -32,7 +32,8 @@ function Card({ name, iniRole, department, startDate, location, emergencyContact
             {Math.floor(calculateYears(startDate)) === 10 && <p> 🎉 Schedule recognition meeting.</p>}
             {Math.floor(calculateYears(startDate)) === 15 && <p> 🎉 Schedule recognition meeting.</p>}
 
-            {role === "Team Lead" ? <Button text="Demote from Team Lead" onClick={clickHandler}></Button> : <Button text="Promote to Team Lead" onClick={clickHandler}></Button>}
+            {role === "Team Lead" ? <Button text="Demote from Team Lead" onClick={clickHandler}></Button>
+                : <Button text="Promote to Team Lead" onClick={clickHandler}></Button>}
 
         </div>
     )

@@ -4,3 +4,11 @@
     border: 2px solid rgb(15, 110, 129);
     border-radius: 3%;
 }
+
+.primary {
+    color: rgb(15, 129, 66);
+}
+
+.secondary {
+    color: rgb(15, 80, 129);
+}
