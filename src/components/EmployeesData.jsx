@@ -2,7 +2,7 @@ const employees = [
     {
         id: 1,
         name: "Alex Morgan",
-        role: "Frontend Developer",
+        iniRole: "Frontend Developer",
         department: "Web Development",
         superior: "Arnold Schwarzenegger",
         startDate: "2019-10-02",
@@ -14,7 +14,7 @@ const employees = [
     {
         id: 2,
         name: "Clara Bennett",
-        role: "Backend Developer",
+        iniRole: "Backend Developer",
         department: "Web Development",
         superior: "Arnold Schwarzenegger",
         startDate: "2017-03-15",
@@ -26,7 +26,7 @@ const employees = [
     {
         id: 3,
         name: "Jordan Taylor",
-        role: "Data Analyst",
+        iniRole: "Data Analyst",
         department: "Data Science",
         superior: "Ada Lovelace",
         startDate: "2021-07-12",
@@ -38,7 +38,7 @@ const employees = [
     {
         id: 4,
         name: "Samira Green",
-        role: "Frontend Developer",
+        iniRole: "Frontend Developer",
         department: "Web Development",
         superior: "Arnold Schwarzenegger",
         startDate: "2014-01-21",
@@ -50,7 +50,7 @@ const employees = [
     {
         id: 5,
         name: "Riley Sutton",
-        role: "Machine Learning Engineer",
+        iniRole: "Machine Learning Engineer",
         department: "Data Science",
         superior: "Ada Lovelace",
         startDate: "2020-11-08",
@@ -62,7 +62,7 @@ const employees = [
     {
         id: 6,
         name: "Michael Tran",
-        role: "Full Stack Developer",
+        iniRole: "Full Stack Developer",
         department: "IT Support",
         superior: "Linus Torvalds",
         startDate: "2018-05-03",
@@ -74,7 +74,7 @@ const employees = [
     {
         id: 7,
         name: "Avery Carson",
-        role: "Full Stack Developer",
+        iniRole: "Full Stack Developer",
         department: "IT Support",
         superior: "Linus Torvalds",
         startDate: "2009-08-14",
@@ -86,7 +86,7 @@ const employees = [
     {
         id: 8,
         name: "Liam Patel",
-        role: "Data Engineer",
+        iniRole: "Data Engineer",
         department: "Data Science",
         superior: "Ada Lovelace",
         startDate: "2019-04-27",
@@ -98,7 +98,7 @@ const employees = [
     {
         id: 9,
         name: "Quinn Foster",
-        role: "Full Stack Developer",
+        iniRole: "Full Stack Developer",
         department: "Web Development",
         superior: "Arnold Schwarzenegger",
         startDate: "2024-09-30",
@@ -110,7 +110,7 @@ const employees = [
     {
         id: 10,
         name: "Emily Reed",
-        role: "Systems Administrator",
+        iniRole: "Systems Administrator",
         department: "IT Support",
         superior: "Linus Torvalds",
         startDate: "2010-02-01",

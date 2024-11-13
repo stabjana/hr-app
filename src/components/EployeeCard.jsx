@@ -1,12 +1,14 @@
+import Button from './Button';
 import './card.css'
 import { useState } from 'react';
 
-function Card(props) {
+function Card({ name, iniRole, department, startDate, location, emergencyContact, trainings, performanceGrade }) {
     // need useState to render!
-    const [role, setRole] = useState(props.role)
+    const [role, setRole] = useState(iniRole);
+
     const clickHandler = () => {
         if (role === "Team Lead") {
-            setRole(props.role);
+            setRole(iniRole);
         }
         else {
             setRole("Team Lead");
@@ -16,20 +18,21 @@ function Card(props) {
     return (
         <div className="card">
             <p className="promoStar"> {role === "Team Lead" && "⭐"} </p>
-            <p>{props.name}</p>
-            <p>{props.role}</p>
-            <p>{props.department}</p>
-            <p>Start Date: {props.startDate}</p>
-            <p>Location: {props.location}</p>
-            <p>Emergency Contact: {props.emergencyContact}</p>
-            <p>Trainings: {props.trainings}</p>
-            <p>Performance Grade: {props.performanceGrade}</p>
-            <p>Years worked here: {Math.floor(calculateYears(props.startDate))}</p>
-            {calculateYears(props.startDate) < 0.5 && <p>📆  Schedule probation review.</p>}
-            {Math.floor(calculateYears(props.startDate)) === 5 && <p> 🎉 Schedule recognition meeting.</p>}
-            {Math.floor(calculateYears(props.startDate)) === 10 && <p> 🎉 Schedule recognition meeting.</p>}
-            {Math.floor(calculateYears(props.startDate)) === 15 && <p> 🎉 Schedule recognition meeting.</p>}
-            {role === "Team Lead" ? <button onClick={clickHandler}>Demote from Team Lead</button> : <button onClick={clickHandler}>Promote to Team Lead</button>}
+            <p>{name}</p>
+            <p>{role}</p>
+            <p>{department}</p>
+            <p>Start Date: {startDate}</p>
+            <p>Location: {location}</p>
+            <p>Emergency Contact: {emergencyContact}</p>
+            <p>Trainings: {trainings}</p>
+            <p>Performance Grade: {performanceGrade}</p>
+            <p>Years worked here: {Math.floor(calculateYears(startDate))}</p>
+            {calculateYears(startDate) < 0.5 && <p>📆  Schedule probation review.</p>}
+            {Math.floor(calculateYears(startDate)) === 5 && <p> 🎉 Schedule recognition meeting.</p>}
+            {Math.floor(calculateYears(startDate)) === 10 && <p> 🎉 Schedule recognition meeting.</p>}
+            {Math.floor(calculateYears(startDate)) === 15 && <p> 🎉 Schedule recognition meeting.</p>}
+
+            {role === "Team Lead" ? <Button text="Demote from Team Lead" onClick={clickHandler}></Button> : <Button text="Promote to Team Lead" onClick={clickHandler}></Button>}
 
         </div>
     )
