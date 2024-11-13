@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-const Form = () => {
+const Form = ({ role, department, location }) => {
     const [formData, setFormData] = useState({ // hook with object fields
-        role: "",
-        department: "",
-        location: "",
+        role,
+        department,
+        location,
 
     });
     const handleChange = (e) => {

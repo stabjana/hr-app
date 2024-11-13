@@ -1,10 +1,12 @@
 import Button from './Button';
 import './card.css'
 import { useState } from 'react';
+import Form from './Forms/Form';
 
 function Card({ name, iniRole, department, startDate, location, emergencyContact, trainings, performanceGrade }) {
     // need useState to render!
     const [role, setRole] = useState(iniRole);
+    const [toggleFormEdit, setToggleFormEdit] = useState(false);
 
     const clickHandler = () => {
         if (role === "Team Lead") {
@@ -31,6 +33,11 @@ function Card({ name, iniRole, department, startDate, location, emergencyContact
             {Math.floor(calculateYears(startDate)) === 5 && <p> 🎉 Schedule recognition meeting.</p>}
             {Math.floor(calculateYears(startDate)) === 10 && <p> 🎉 Schedule recognition meeting.</p>}
             {Math.floor(calculateYears(startDate)) === 15 && <p> 🎉 Schedule recognition meeting.</p>}
+
+            <Button onClick={() => setToggleFormEdit(!toggleFormEdit)} text={toggleFormEdit ? "Save" : "Edit"} />
+            {toggleFormEdit && (
+                <Form role={role} department={department} location={location} />
+            )}
 
             {role === "Team Lead" ? <Button className="primary" text="Demote" onClick={clickHandler}></Button>
                 : <Button className="secondary" text="Promote" onClick={clickHandler}></Button>}
