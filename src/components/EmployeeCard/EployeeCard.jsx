@@ -1,7 +1,7 @@
-import Button from './Button';
+import Button from '../Button';
 import './card.css'
 import { useState } from 'react';
-import Form from './Forms/Form';
+import Form from '../Forms/Form';
 
 function Card({ name, iniRole, department, startDate, location, emergencyContact, trainings, performanceGrade }) {
     // need useState to render!

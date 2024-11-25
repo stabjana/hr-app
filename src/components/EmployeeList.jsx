@@ -1,5 +1,5 @@
-import Card from "./EployeeCard";
-import employees from "./EmployeesData";
+import Card from "./EmployeeCard/EployeeCard";
+import employees from "../data/EmployeesData";
 import './employee.css'
 import { useState } from 'react';
 import Button from "./Button";
