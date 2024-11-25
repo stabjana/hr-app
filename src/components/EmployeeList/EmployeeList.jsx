@@ -1,8 +1,8 @@
-import Card from "./EmployeeCard/EployeeCard";
-import employees from "../data/EmployeesData";
+import Card from "../EmployeeCard/EployeeCard";
+import employees from "../../data/EmployeesData";
 import './employee.css'
 import { useState } from 'react';
-import Button from "./Button";
+import Button from "../Button/Button";
 
 
 function List() {
