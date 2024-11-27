@@ -1,55 +1,93 @@
+import { useState } from 'react';
 import Button from '../Button/Button';
 import './card.css'
-import { useState } from 'react';
-import Form from '../Forms/Form';
+import { calcYearsWorked } from "../../utilities/yearsCalc";
+import { getDepartmentClass } from "../../utilities/styleUtils";
 
-function Card({ name, iniRole, department, startDate, location, emergencyContact, trainings, performanceGrade }) {
-    // need useState to render!
-    const [role, setRole] = useState(iniRole);
-    const [toggleFormEdit, setToggleFormEdit] = useState(false);
+const EmployeeCard = ({ startDate, department, name, location, role }) => {
+    const [isEditing, setIsEditing] = useState(false);
+    const [promotedRole, setPromotedRole] = useState(false);
+    const [person, setPerson] = useState({ department, location, role });
 
-    const clickHandler = () => {
-        if (role === "Team Lead") {
-            setRole(iniRole);
-        }
-        else {
-            setRole("Team Lead");
-        }
+    const yearsWorked = calcYearsWorked(startDate);
+    const isProbation = yearsWorked < 0.5;
+    const isAnniversary = yearsWorked > 0 && yearsWorked % 5 === 0;
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setPerson((prevState) => ({ ...prevState, [name]: value }));
     };
 
+    const renderEditableField = (value, name) =>
+        isEditing ? (
+            <input value={value} name={name} onChange={handleInputChange} />
+        ) : (
+            <p className={name}>{value}</p>
+        );
+
     return (
-        <div className="card">
-            <p className="promoStar"> {role === "Team Lead" && "⭐"} </p>
-            <p>{name}</p>
-            {role === "Team Lead" ? <p className="newRole" >{role} </p> : <p className="iniRole">{role}</p>}
-            <p>{department}</p>
-            <p>Start Date: {startDate}</p>
-            <p>Location: {location}</p>
-            <p>Emergency Contact: {emergencyContact}</p>
-            <p>Trainings: {trainings}</p>
-            <p>Performance Grade: {performanceGrade}</p>
-            <p>Years worked here: {Math.floor(calculateYears(startDate))}</p>
-            {calculateYears(startDate) < 0.5 && <p>📆  Schedule probation review.</p>}
-            {Math.floor(calculateYears(startDate)) === 5 && <p> 🎉 Schedule recognition meeting.</p>}
-            {Math.floor(calculateYears(startDate)) === 10 && <p> 🎉 Schedule recognition meeting.</p>}
-            {Math.floor(calculateYears(startDate)) === 15 && <p> 🎉 Schedule recognition meeting.</p>}
+        <div className={`card ${getDepartmentClass(person.department)}`}>
+            <div className="card-header">
+                <p className="name">{name}</p>
+                <div className="card-icons">
+                    {promotedRole && (
+                        <div>
+                            <span className="material-symbols-outlined promote">star</span>
+                            <p className="card-icon-message">Team Lead</p>
+                        </div>
+                    )}
+                    {isAnniversary && (
+                        <div>
+                            <span className="material-symbols-outlined celebrate">
+                                celebration
+                            </span>
+                            <p className="card-icon-message">
+                                Schedule recognition meeting for {yearsWorked} years of in the job!
+                            </p>
+                        </div>
+                    )}
 
-            <Button onClick={() => setToggleFormEdit(!toggleFormEdit)} text={toggleFormEdit ? "Save" : "Edit"} />
-            {toggleFormEdit && (
-                <Form role={role} department={department} location={location} />
-            )}
-
-            {role === "Team Lead" ? <Button className="primary" text="Demote" onClick={clickHandler}></Button>
-                : <Button className="secondary" text="Promote" onClick={clickHandler}></Button>}
-
+                    {isProbation && (
+                        <div>
+                            <span className="material-symbols-outlined notify">
+                                notifications
+                            </span>
+                            <p className="card-icon-message">
+                                Schedule probation review. It's almost 6 months.
+                            </p>
+                        </div>
+                    )}
+                </div>
+            </div>
+            <div className="card-content">
+                <div className="card-data">
+                    {renderEditableField(person.role, "role")}
+                    {renderEditableField(person.department, "department")}
+                    {renderEditableField(person.location, "location")}
+                </div>
+                <div className="card-image">
+                    <img src={`https://robohash.org/${name}?set=set5`} alt={name} />
+                </div>
+            </div>
+            <div className="card-footer">
+                <div className="card-footer-actions">
+                    <Button
+                        onClick={() => setPromotedRole((prev) => !prev)}
+                        text={promotedRole ? "Demote" : "Promote"}
+                    />
+                    <Button
+                        onClick={() => setIsEditing((prev) => !prev)}
+                        text={isEditing ? "Save" : "Edit"}
+                        role="secondary"
+                    />
+                </div>
+                <p className="years">
+                    {yearsWorked} <span className="text"> years in school </span>
+                    <span className="date">({startDate})</span>
+                </p>
+            </div>
         </div>
-    )
+    );
 };
-const calculateYears = (startDate) => {
-    const start = new Date(startDate);
-    const today = new Date();
-    return ((today - start) / 1000 / 60 / 60 / 24 / 365);
-}
 
-
-export default Card;
+export default EmployeeCard;

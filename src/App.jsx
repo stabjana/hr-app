@@ -1,20 +1,22 @@
-import './App.css'
-import List from './components/EmployeeList/EmployeeList.jsx'
-import Footer from './components/Footer/Footer.jsx'
-import Header from './components/Header/Header.jsx'
+import "./App.css";
+import createRoutes from "./routes/appRoutes";
+import { RouterProvider } from "react-router-dom";
 
 function App() {
+  /*   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const loginHandler = () => {
+    setIsLoggedIn((prevState) => !prevState);
+  }; */
 
   return (
-    <>
-      <div>
-        <Header></Header>
-        <List></List>
-        <Footer></Footer>
-      </div>
-
-    </>
-  )
+    <RouterProvider
+      router={createRoutes}
+      future={{
+        v7_startTransition: true,
+      }}
+    />
+  );
 }
 
-export default App
+export default App;

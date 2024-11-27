@@ -1,4 +1,4 @@
-const employees = [
+export const employeesData = [
     {
         id: 1,
         name: "Alex Morgan",
@@ -120,5 +120,3 @@ const employees = [
         performanceGrade: "9"
     }
 ];
-
-export default employees;
