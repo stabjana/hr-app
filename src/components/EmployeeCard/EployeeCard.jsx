@@ -32,14 +32,14 @@ const EmployeeCard = ({ startDate, department, name, location, role }) => {
                 <div className="card-icons">
                     {promotedRole && (
                         <div>
-                            <span className="material-symbols-outlined promote">star</span>
+                            <span className="material-symbols-outlined promote">⭐</span>
                             <p className="card-icon-message">Team Lead</p>
                         </div>
                     )}
                     {isAnniversary && (
                         <div>
                             <span className="material-symbols-outlined celebrate">
-                                celebration
+                                🎉
                             </span>
                             <p className="card-icon-message">
                                 Schedule recognition meeting for {yearsWorked} years of in the job!
@@ -50,7 +50,7 @@ const EmployeeCard = ({ startDate, department, name, location, role }) => {
                     {isProbation && (
                         <div>
                             <span className="material-symbols-outlined notify">
-                                notifications
+                                📆
                             </span>
                             <p className="card-icon-message">
                                 Schedule probation review. It's almost 6 months.

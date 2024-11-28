@@ -20,3 +20,152 @@
 .secondary {
     background-color: rgb(15, 129, 66);
 }
+
+/* Card overal */
+.card {
+    /* background: #f3f3f3; */
+    border-radius: 5px;
+    /* color: #333; */
+    padding: 1rem;
+    width: 360px;
+    position: relative;
+}
+
+.card p {
+    text-align: left;
+}
+
+/* .card::before {
+    content: "";
+    display: block;
+    background-color: green;
+    border-radius: 5px 5px 0 0;
+    height: 5px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+} */
+
+/* .card.web::before {
+    background-color: #ffa200;
+}
+
+.card.game::before {
+    background-color: #006280;
+}
+
+.card.default::before {
+    background-color: #939393;
+} */
+
+/* Card header part*/
+
+.card-header {
+    position: relative;
+}
+
+.name {
+    font-weight: 700;
+    /*  text-transform: uppercase; */
+    font-size: 1.5rem;
+    padding: inherit;
+    margin: inherit;
+}
+
+/* .name::after {
+    content: "";
+    position: relative;
+    width: 100%;
+    background-color: #e5e5e5;
+    height: 1px;
+    display: block;
+} */
+
+.card-icons {
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.card-icons div {
+    display: inline;
+    margin-left: 1rem;
+}
+
+.card-icon-message {
+    display: none;
+}
+
+.card-icons div:hover .card-icon-message {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 1.5rem;
+    width: 200px;
+    background-color: #333;
+    color: #fefefe;
+    border-radius: 5px;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+/* Card main area part*/
+.card-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.card-data {
+    flex: 2;
+}
+
+.card-image {
+    flex: 1;
+    align-self: end;
+    display: flex;
+}
+
+.card-image img {
+    object-fit: cover;
+    width: 50%;
+    margin-left: auto;
+    margin-top: 1rem;
+}
+
+.role {
+    font-weight: 300;
+    font-size: 0.8rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.department,
+.location,
+.text {
+    font-size: 0.8rem;
+    padding: inherit;
+    margin: inherit;
+}
+
+/* Card footer part*/
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    height: 60px;
+}
+
+.years {
+    align-self: end;
+    margin: inherit;
+}
+
+.date {
+    font-size: 0.8rem;
+    font-style: italic;
+}

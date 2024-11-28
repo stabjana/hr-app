@@ -9,7 +9,7 @@ const EmployeeList = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://localhost:3002/')
+        fetch('http://localhost:3002/employeesData')
             .then((response) => response.json())
             .then((data) => {
                 setPosts(data);
@@ -17,6 +17,7 @@ const EmployeeList = () => {
             });
     });
 
+    /* return part */
     return (
         <div className="list">
             {isLoading ? (
