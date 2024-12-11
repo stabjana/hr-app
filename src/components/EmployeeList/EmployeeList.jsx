@@ -3,8 +3,6 @@ import "./employee.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-/* import { employeesData } from "../../data/EmployeesData.jsx";*/
-
 const EmployeeList = () => {
 
     const [persons, setPersons] = useState([]);
@@ -36,23 +34,6 @@ const EmployeeList = () => {
             )}
         </div>
     );
-    /* 
-        oder:
-        return (
-            <div>
-                <main>
-                    <h2>Employee List</h2>
-             
-                    {isLoading ? (
-                        <p>Loading...</p>
-                    ) : (
-                        persons.map((employee) => (
-                            <EmployeeCard key={employee.id} {...employee} />
-                        ))
-                    )}
-                </main>
-            </div>
-        ); */
 };
 
 export default EmployeeList;

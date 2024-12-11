@@ -21,13 +21,11 @@
     background-color: rgb(15, 129, 66);
 }
 
-/* Card overal */
+/* Card general */
 .card {
-    /* background: #f3f3f3; */
     border-radius: 5px;
-    /* color: #333; */
     padding: 1rem;
-    width: 360px;
+    width: 460px;
     position: relative;
 }
 
@@ -69,7 +67,7 @@
     top: 1.5rem;
     width: 200px;
     background-color: #333;
-    color: #fefefe;
+    color: #ffffff;
     border-radius: 5px;
     padding: 1rem;
     cursor: pointer;

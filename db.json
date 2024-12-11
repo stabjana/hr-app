@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Alex Morgan",
-      "iniRole": "Frontend Developer",
+      "role": "Frontend Developer",
       "department": "Web Development",
       "superior": "Arnold Schwarzenegger",
       "startDate": "2019-10-02",
@@ -15,7 +15,7 @@
     {
       "id": 2,
       "name": "Clara Bennett",
-      "iniRole": "Backend Developer",
+      "role": "Backend Developer",
       "department": "Web Development",
       "superior": "Arnold Schwarzenegger",
       "startDate": "2017-03-15",
@@ -27,7 +27,7 @@
     {
       "id": 3,
       "name": "Jordan Taylor",
-      "iniRole": "Data Analyst",
+      "role": "Data Analyst",
       "department": "Data Science",
       "superior": "Ada Lovelace",
       "startDate": "2021-07-12",
@@ -39,7 +39,7 @@
     {
       "id": 4,
       "name": "Samira Green",
-      "iniRole": "Frontend Developer",
+      "role": "Frontend Developer",
       "department": "Web Development",
       "superior": "Arnold Schwarzenegger",
       "startDate": "2014-01-21",
@@ -51,7 +51,7 @@
     {
       "id": 5,
       "name": "Riley Sutton",
-      "iniRole": "Machine Learning Engineer",
+      "role": "Machine Learning Engineer",
       "department": "Data Science",
       "superior": "Ada Lovelace",
       "startDate": "2020-11-08",
@@ -63,7 +63,7 @@
     {
       "id": 6,
       "name": "Michael Tran",
-      "iniRole": "Full Stack Developer",
+      "role": "Full Stack Developer",
       "department": "IT Support",
       "superior": "Linus Torvalds",
       "startDate": "2018-05-03",
@@ -75,7 +75,7 @@
     {
       "id": 7,
       "name": "Avery Carson",
-      "iniRole": "Full Stack Developer",
+      "role": "Full Stack Developer",
       "department": "IT Support",
       "superior": "Linus Torvalds",
       "startDate": "2009-08-14",
@@ -87,7 +87,7 @@
     {
       "id": 8,
       "name": "Liam Patel",
-      "iniRole": "Data Engineer",
+      "role": "Data Engineer",
       "department": "Data Science",
       "superior": "Ada Lovelace",
       "startDate": "2019-04-27",
@@ -99,7 +99,7 @@
     {
       "id": 9,
       "name": "Quinn Foster",
-      "iniRole": "Full Stack Developer",
+      "role": "Full Stack Developer",
       "department": "Web Development",
       "superior": "Arnold Schwarzenegger",
       "startDate": "2024-09-30",
@@ -111,7 +111,7 @@
     {
       "id": 10,
       "name": "Emily Reed",
-      "iniRole": "Systems Administrator",
+      "role": "Systems Administrator",
       "department": "IT Support",
       "superior": "Linus Torvalds",
       "startDate": "2010-02-01",
