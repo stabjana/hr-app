@@ -5,6 +5,12 @@ import "./Header.css";
 const Header = ({ isLoggedIn, loginHandler }) => {
     const buttonText = isLoggedIn ? "Log out" : "Log in";
 
+    /*    TO DO!!!
+       When login it jumps to url /?
+       when loading the page it always goed to persons 
+       remove dots at ul in header
+       */
+
     return (
         <header>
             <h1>Employee dashboard</h1>
