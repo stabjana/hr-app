@@ -23,7 +23,7 @@ const Form = ({ addEmployeeToList }) => {
 
         // Send POST request to backend to add a new employee
         axios
-            .post("http://localhost:3002/employees", formData)
+            .post("http://localhost:3002/employeesData", formData)
             .then((response) => {
                 // Once the data is added, update the parent list with the new employee
                 addEmployeeToList(response.data);

@@ -12,7 +12,7 @@ const Header = (props) => {
                 <nav>
                     <ul>
                         <li>
-                            <Link to="employees">Employees</Link>
+                            <Link to="employeesData">Employees</Link>
                         </li>
                         <li>
                             <Link to="new">Add new</Link>

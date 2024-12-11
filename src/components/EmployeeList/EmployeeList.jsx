@@ -12,7 +12,7 @@ const EmployeeList = () => {
 
     useEffect(() => {
         axios
-            .get("http://localhost:3002/employees")
+            .get("http://localhost:3002/employeesData")
             .then((response) => {
                 setPersons(response.data);
                 setIsLoading(false);
@@ -29,6 +29,7 @@ const EmployeeList = () => {
             {isLoading ? (
                 <p>Page is loading...</p>
             ) : (
+
                 posts.map((employee) => {
                     return <EmployeeCard key={employee.id} {...employee} />
                 })
