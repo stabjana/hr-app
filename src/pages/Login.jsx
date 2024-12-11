@@ -1,10 +1,15 @@
+import { useState } from "react";
+import Button from "../components/Button/Button";
+import { useNavigate } from "react-router-dom";
+
+
 const Login = ({ loginHandler }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const checkCredentials = (e) => {
-    e.preventDefault();
+  const checkCredentials = () => {
+
     if (
       username.toLowerCase() === "steffi" &&
       password.toLowerCase() === "test"
@@ -18,8 +23,8 @@ const Login = ({ loginHandler }) => {
   };
 
   return (
-    <div className={styles.loginContainer}>
-      <form className={styles.loginForm} onSubmit={checkCredentials}>
+    <div /* className={styles.loginContainer} */>
+      <form /* className={styles.loginForm} */ onSubmit={checkCredentials}>
         <p>Log in</p>
         <div>
           <label htmlFor="username">Username</label>

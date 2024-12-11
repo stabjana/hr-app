@@ -35,52 +35,16 @@
     text-align: left;
 }
 
-/* .card::before {
-    content: "";
-    display: block;
-    background-color: green;
-    border-radius: 5px 5px 0 0;
-    height: 5px;
-    width: 100%;
-    top: 0;
-    left: 0;
-    position: absolute;
-} */
-
-/* .card.web::before {
-    background-color: #ffa200;
-}
-
-.card.game::before {
-    background-color: #006280;
-}
-
-.card.default::before {
-    background-color: #939393;
-} */
-
-/* Card header part*/
-
 .card-header {
     position: relative;
 }
 
 .name {
     font-weight: 700;
-    /*  text-transform: uppercase; */
     font-size: 1.5rem;
     padding: inherit;
     margin: inherit;
 }
-
-/* .name::after {
-    content: "";
-    position: relative;
-    width: 100%;
-    background-color: #e5e5e5;
-    height: 1px;
-    display: block;
-} */
 
 .card-icons {
     position: absolute;

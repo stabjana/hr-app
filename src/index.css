@@ -17,12 +17,12 @@
 
 a {
   font-weight: 500;
-  color: #08737c;
+  color: #001f22;
   text-decoration: inherit;
 }
 
 a:hover {
-  color: #379098;
+  color: #ffffff;
 }
 
 body {
@@ -50,6 +50,7 @@ button {
   transition: border-color 0.25s;
   box-shadow: 0 0 5px 1px #dddddd;
   margin: 1vw;
+  color: #333;
 }
 
 button:hover {

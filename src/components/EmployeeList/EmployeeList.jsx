@@ -6,7 +6,7 @@ import axios from "axios";
 /* import { employeesData } from "../../data/EmployeesData.jsx";*/
 
 const EmployeeList = () => {
-    const [posts, setPosts] = useState([]); // HERE IS SOMETHING WRONG!!!
+
     const [persons, setPersons] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -30,7 +30,7 @@ const EmployeeList = () => {
                 <p>Page is loading...</p>
             ) : (
 
-                posts.map((employee) => {
+                persons.map((employee) => {
                     return <EmployeeCard key={employee.id} {...employee} />
                 })
             )}

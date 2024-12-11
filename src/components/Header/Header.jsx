@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import "./Header.css";
 
-const Header = (props) => {
-    const buttonText = props.loginStatus ? "Log out" : "Log in";
+const Header = ({ isLoggedIn, loginHandler }) => {
+    const buttonText = isLoggedIn ? "Log out" : "Log in";
 
     return (
         <header>
@@ -19,7 +19,11 @@ const Header = (props) => {
                         </li>
                     </ul>
                 </nav>
-                {/*<Button onClick={props.onClick} text={buttonText} />*/}
+                {/*  <Button
+                    onClick={loginHandler}
+                    text={buttonText}
+                    role="primary-light"
+                /> */}
             </div>
         </header>
     );
