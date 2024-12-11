@@ -1,57 +1,86 @@
 import { useState } from "react";
 import axios from "axios";
+import Button from "../components/Button/Button";
 
-const Form = ({ role, department, location }) => {
-    const [formData, setFormData] = useState({ // hook with object fields
-        role,
-        department,
-        location,
-
+const Form = ({ addEmployeeToList }) => {
+    const [formData, setFormData] = useState({
+        name: "",
+        role: "",
+        department: "",
+        startDate: "",
+        location: "",
     });
-    const handleChange = (e) => {
+
+    // Update form state when an input changes
+    const changeHandler = (e) => {
         const { name, value } = e.target;
-        setFormData((prevState) => ({ ...prevState, [name]: value })) // create a new object + all previous states + everything where name and elements are changing
-    }
+        setFormData((prev) => ({ ...prev, [name]: value }));
+    };
 
-    const AddForm = ({ setEmployees, employees }) => { // addPerson
-        const [newEmployee, setNewEmployee] = useState({
+    // Submit form data
+    const submitHandler = (e) => {
+        e.preventDefault();
 
-            /*  });
-             const [formData, setFormData] = useState({ */
-            name: "",
-            iniRole: "",
-            department: "",
-            superior: "",
-            startDate: "",
-            startDate: "",
-            location: "",
-            emergencyContact: "",
-            trainings: "",
-            performanceGrade: "",
-
-        });
-
-        const handleSubmit = () => {
-
-            axios.post('http://localhost:3002/employeesData', newEmployee)
-                .then((res) => {
-                    setEmployees([...employees, res.data])
-                    setNewEmployee('');
+        // Send POST request to backend to add a new employee
+        axios
+            .post("http://localhost:3002/employees", formData)
+            .then((response) => {
+                // Once the data is added, update the parent list with the new employee
+                addEmployeeToList(response.data);
+                // Reset form fields
+                setFormData({
+                    name: "",
+                    role: "",
+                    department: "",
+                    startDate: "",
+                    location: "",
                 });
-        }
+            })
+            .catch((error) => {
+                console.error("Error adding employee:", error);
+            });
+    };
 
+    return (
+        <form onSubmit={submitHandler} className="formBase">
+            <label htmlFor="name">Name</label>
+            <input type="text" name="name" value={formData.name} onChange={changeHandler} required
+            />
 
-        return (
-            <div>
-                <form onSubmit={handleSubmit()}>
-                    <input name="role" value={formData.role} onChange={handleChange} type="text" />
-                    <input name="department" value={formData.department} onChange={handleChange} type="text" />
-                    <input name="location" value={formData.location} onChange={handleChange} type="text" />
-                </form>
-            </div>
-        )
+            <label htmlFor="role">Role</label>
+            <input type="text" name="role" value={formData.role} onChange={changeHandler} required
+            />
 
-    }
+            <label htmlFor="department">Department</label>
+            <input
+                type="text"
+                name="department"
+                value={formData.department}
+                onChange={changeHandler}
+
+            />
+
+            <label htmlFor="startDate">Start Date</label>
+            <input
+                type="date"
+                name="startDate"
+                value={formData.startDate}
+                onChange={changeHandler}
+
+            />
+
+            <label htmlFor="location">Location</label>
+            <input
+                type="text"
+                name="location"
+                value={formData.location}
+                onChange={changeHandler}
+
+            />
+
+            <Button text="Add new" type="submit" />
+        </form>
+    );
 };
 
 export default Form;

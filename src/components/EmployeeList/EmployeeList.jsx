@@ -1,21 +1,27 @@
 import EmployeeCard from "../EmployeeCard/EployeeCard.jsx";
 import "./employee.css";
 import { useState, useEffect } from "react";
+import axios from "axios";
 
-/* import { employeesData } from "../../data/EmployeesData.jsx"; */
+/* import { employeesData } from "../../data/EmployeesData.jsx";*/
 
 const EmployeeList = () => {
-    const [posts, setPosts] = useState([]);
+    const [posts, setPosts] = useState([]); // HERE IS SOMETHING WRONG!!!
+    const [persons, setPersons] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://localhost:3002/employeesData')
-            .then((response) => response.json())
-            .then((data) => {
-                setPosts(data);
+        axios
+            .get("http://localhost:3002/employees")
+            .then((response) => {
+                setPersons(response.data);
+                setIsLoading(false);
+            })
+            .catch((error) => {
+                console.error("Error fetching data:", error);
                 setIsLoading(false);
             });
-    });
+    }, []);
 
     /* return part */
     return (
@@ -29,6 +35,23 @@ const EmployeeList = () => {
             )}
         </div>
     );
+    /* 
+        oder:
+        return (
+            <div>
+                <main>
+                    <h2>Employee List</h2>
+             
+                    {isLoading ? (
+                        <p>Loading...</p>
+                    ) : (
+                        persons.map((employee) => (
+                            <EmployeeCard key={employee.id} {...employee} />
+                        ))
+                    )}
+                </main>
+            </div>
+        ); */
 };
 
 export default EmployeeList;
