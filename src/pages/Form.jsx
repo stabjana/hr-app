@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import Button from "../components/Button/Button";
 
-const Form = ({ addEmployeeToList }) => {
+const Form = () => {
     const [formData, setFormData] = useState({
         name: "",
         role: "",
@@ -26,7 +26,7 @@ const Form = ({ addEmployeeToList }) => {
             .post("http://localhost:3002/employeesData", formData)
             .then((response) => {
                 // Once the data is added, update the parent list with the new employee
-                addEmployeeToList(response.data);
+                //addEmployeeToList(response.data);
                 // Reset form fields
                 setFormData({
                     name: "",
