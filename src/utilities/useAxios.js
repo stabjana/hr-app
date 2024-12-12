@@ -23,7 +23,7 @@ const useAxios = (baseUrl) => {
         catch (error) {
             setError(error.message || "Something went wrong");
             console.error(error);
-            throw error,
+            throw error
         }
         finally {
             setLoading(false);
