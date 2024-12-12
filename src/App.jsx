@@ -14,7 +14,7 @@ function App() {
 
   return (
     <RouterProvider
-      router={createRoutes}
+      router={router}
       future={{
         v7_startTransition: true,
       }}
