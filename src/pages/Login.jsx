@@ -15,7 +15,7 @@ const Login = ({ loginHandler }) => {
       password.toLowerCase() === "test"
     ) {
       loginHandler();
-      navigate("/");
+      navigate("/employeesData");
     }
     else {
       alert("use correct credentials");

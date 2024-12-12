@@ -4,8 +4,9 @@ import List from "../pages/List";
 import Form from "../pages/Form";
 import Login from "../pages/Login";
 import ErrorPage from "../pages/ErrorPage";
+import SinglePage from "../pages/SinglePage/SinglePage";
 
-/*
+
 const createRoutes = (isLoggedIn, loginHandler) => {
   return createBrowserRouter(
     [
@@ -34,9 +35,9 @@ const createRoutes = (isLoggedIn, loginHandler) => {
       },
     }
   );
-}; */
+};
 
-const createRoutes = createBrowserRouter(
+/* const createRoutes = createBrowserRouter(
   [
     {
       path: "/",
@@ -59,5 +60,5 @@ const createRoutes = createBrowserRouter(
     },
   }
 );
-
+ */
 export default createRoutes;
