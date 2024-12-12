@@ -19,7 +19,7 @@ const createRoutes = (isLoggedIn, loginHandler) => {
         ),
         errorElement: <ErrorPage />,
         children: [
-          { path: "/", element: <List /> },
+          { path: "/employeesData", element: <List /> },
           { path: "/employeesData/:id", element: <SinglePage /> },
           { path: "/new", element: <Form /> },
         ],

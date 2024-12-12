@@ -8,8 +8,8 @@ const Login = ({ loginHandler }) => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const checkCredentials = () => {
-
+  const checkCredentials = (e) => {
+    e.preventDefault();
     if (
       username.toLowerCase() === "steffi" &&
       password.toLowerCase() === "test"
