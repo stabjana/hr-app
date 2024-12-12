@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import useAxiosRequest from "../../utilities/useAxios";
 import { useEmployeeStatus } from "../../hooks/useEmployeeStatus";
-import Button from "../components/Button/Button";
+import Button from "../../components/Button/Button";
 import styles from "./SinglePage.module.css";
 
 const SinglePage = () => {
