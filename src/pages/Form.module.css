@@ -1,0 +1,40 @@
+.formBase {
+    width: 300px;
+}
+
+.formContainer {
+    display: flex;
+    justify-content: center;
+    color: aliceblue;
+}
+
+.formBase input {
+    width: 300px;
+    padding: 0.3rem;
+    font-size: inherit;
+    font-family: inherit;
+    margin: 0.5rem;
+    background-color: aliceblue;
+    color: #333;
+}
+
+.formBase label {
+    width: 300px;
+    display: inline-block;
+    margin-top: 1rem;
+    color: #cecece;
+    font-size: 0.8rem;
+}
+
+.formBase select {
+    width: 100%;
+}
+
+.formContainer button {
+    margin-right: 1rem;
+}
+
+.formContainer p {
+    text-align: center;
+    font-size: 1.2rem;
+}
