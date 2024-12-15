@@ -30,10 +30,10 @@ const useAxios = (baseUrl) => {
         }
     }, [baseUrl]);
 
-    const get = (url, body, headers = {}) =>
+    const post = (url, body, headers = {}) =>
         request({ method: "POST", url, body, headers });
 
-    const post = (url, body, headers = {}) =>
+    const get = (url, body, headers = {}) =>
         request({ method: "GET", url, body, headers });
 
     const update = (url, body, headers = {}) =>

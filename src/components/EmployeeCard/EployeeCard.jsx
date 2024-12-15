@@ -1,13 +1,15 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from '../Button/Button';
 import './card.css'
 import { calcYearsWorked } from "../../utilities/yearsCalc";
 import { getDepartmentClass } from "../../utilities/styleUtils";
 
-const EmployeeCard = ({ startDate, department, name, location, role }) => {
+const EmployeeCard = ({ startDate, department, name, location, role, id }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [promotedRole, setPromotedRole] = useState(false);
     const [person, setPerson] = useState({ department, location, role });
+    const navigate = useNavigate();
 
     const yearsWorked = calcYearsWorked(startDate);
     const isProbation = yearsWorked < 0.5;
@@ -78,6 +80,11 @@ const EmployeeCard = ({ startDate, department, name, location, role }) => {
                     <Button
                         onClick={() => setIsEditing((prev) => !prev)}
                         text={isEditing ? "Save" : "Edit"}
+                        role="secondary"
+                    />
+                    <Button
+                        onClick={() => navigate(`/employeesData/${id}`)}
+                        text={"Show details"}
                         role="secondary"
                     />
                 </div>

@@ -10,12 +10,12 @@ const SinglePage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const { data, loading, read } = useAxiosRequest(
+  const { data, loading, get } = useAxiosRequest(
     `http://localhost:3001/persons/${id}`
   );
 
   useEffect(() => {
-    read();
+    get();
   }, []);
 
   const { yearsWorked } = useEmployeeStatus(data?.startDate);

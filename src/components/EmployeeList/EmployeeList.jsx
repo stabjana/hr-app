@@ -1,37 +1,29 @@
+import { useState, useEffect } from "react";
+import useAxiosRequest from "../../utilities/useAxios.js";
 import EmployeeCard from "../EmployeeCard/EployeeCard.jsx";
 import "./employee.css";
-import { useState, useEffect } from "react";
-import axios from "axios";
+
 
 const EmployeeList = () => {
-
-    const [persons, setPersons] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const {
+        data: employeesData,
+        loading,
+        error,
+        get,
+    } = useAxiosRequest("http://localhost:3002/");
 
     useEffect(() => {
-        axios
-            .get("http://localhost:3002/employeesData")
-            .then((response) => {
-                setPersons(response.data);
-                setIsLoading(false);
-            })
-            .catch((error) => {
-                console.error("Error fetching data:", error);
-                setIsLoading(false);
-            });
+        get("employeesData");
     }, []);
 
-    /* return part */
+    if (loading) return <p>Page is loading...</p>;
+    if (error) return <p>{error}</p>;
+
     return (
         <div className="list">
-            {isLoading ? (
-                <p>Page is loading...</p>
-            ) : (
-
-                persons.map((employee) => {
-                    return <EmployeeCard key={employee.id} {...employee} />
-                })
-            )}
+            {(employeesData || []).map((employee) => {
+                return <EmployeeCard key={employee.id} {...employee} />;
+            })}
         </div>
     );
 };
