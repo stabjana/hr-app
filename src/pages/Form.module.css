@@ -28,6 +28,10 @@
 
 .formBase select {
     width: 100%;
+    background-color: aliceblue;
+    color: #333;
+    padding: 0.8rem;
+    margin: 0.5rem;
 }
 
 .formContainer button {

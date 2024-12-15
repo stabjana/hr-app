@@ -1,18 +1,13 @@
 import { Link } from "react-router-dom";
 import Button from "../Button/Button";
-import "./Header.css";
+import styles from "./Header.module.css";
 
 const Header = ({ isLoggedIn, loginHandler }) => {
     const buttonText = isLoggedIn ? "Log out" : "Log in";
 
-    /*    TO DO!!!
-       When login it jumps to url /?
-       when loading the page it always goed to persons 
-       remove dots at ul in header
-       */
 
     return (
-        <header>
+        <header className={styles.Header}>
             <h1>Employee dashboard</h1>
             <div>
                 <nav>
@@ -24,12 +19,12 @@ const Header = ({ isLoggedIn, loginHandler }) => {
                             <Link to="new">Add new</Link>
                         </li>
                     </ul>
+                    <Button
+                        onClick={loginHandler}
+                        text={buttonText}
+                        role="primary"
+                    />
                 </nav>
-                {/*  <Button
-                    onClick={loginHandler}
-                    text={buttonText}
-                    role="primary-light"
-                /> */}
             </div>
         </header>
     );
