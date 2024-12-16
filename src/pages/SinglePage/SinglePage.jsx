@@ -11,7 +11,7 @@ const SinglePage = () => {
   const navigate = useNavigate();
 
   const { data, loading, get } = useAxiosRequest(
-    `http://localhost:3001/employeesData/${id}`
+    `http://localhost:3002/employeesData/${id}`
   );
 
   useEffect(() => {
@@ -35,9 +35,6 @@ const SinglePage = () => {
           </div>
           <div>
             <h2>{data.name}</h2>
-            {data.skills.map((skill) => (
-              <span key={skill}>{skill} </span>
-            ))}
             <div /* className={styles.data} */>
               <div /* className={styles.role} */>
                 <p>{data.role}</p>
