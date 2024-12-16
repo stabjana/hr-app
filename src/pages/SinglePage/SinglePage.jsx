@@ -11,7 +11,7 @@ const SinglePage = () => {
   const navigate = useNavigate();
 
   const { data, loading, get } = useAxiosRequest(
-    `http://localhost:3001/persons/${id}`
+    `http://localhost:3001/employeesData/${id}`
   );
 
   useEffect(() => {

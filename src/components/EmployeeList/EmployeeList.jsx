@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import useAxiosRequest from "../../utilities/useAxios.js";
 import EmployeeCard from "../EmployeeCard/EployeeCard.jsx";
 import "./employee.css";
