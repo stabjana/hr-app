@@ -27,30 +27,23 @@ const SinglePage = () => {
   return (
     <div>
       {data && (
-        <div /* className={styles.singlePageContent} */>
-          <div /* className={styles.status} */>
-            <p>{data.status}</p>
-            <p>{data.startDate}</p>
-            <p /* className= {styles.lessImportant} */>{yearsWorked} years</p>
-          </div>
+        <div className={styles.singlePageContent} >
           <div>
             <h2>{data.name}</h2>
-            <div /* className={styles.data} */>
-              <div /* className={styles.role} */>
-                <p>{data.role}</p>
-                <p>{data.department}</p>
-                <p>{data.location}</p>
-              </div>
-              <div /* className={styles.contactDetails} */>
-                <p> {data.phone}</p>
-                <p> {data.email}</p>
-              </div>
+            <div className={styles.data} >
+
+              <p>Role: {data.role}</p>
+              <p>Department: {data.department}</p>
+              <p>Superior: {data.superior}</p>
+              <p>Location: {data.location}</p>
+              <p>Finished trainings: {data.trainings}</p>
+              <p>Overall performance: {data.performanceGrade}</p>
+              <p>Emergency contact: {data.emergencyContact}</p>
             </div>
-            <div /* className={styles.management} */>
-              <p> {data.employmentType}</p>
-              <p> {data.salary} €</p>
-              <p> {data.manager}</p>
-            </div>
+          </div>
+          <div className={styles.status} >
+            <p>Start date: {data.startDate}</p>
+            <p>{yearsWorked} years</p>
           </div>
         </div>
       )}

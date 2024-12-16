@@ -1,46 +1,39 @@
 .singlePageContent {
-  background-color: var(--light-color);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: aliceblue;
   padding: 2rem;
-  color: var(--dark-color);
-  text-align: left;
+  color: #010830;
   border-radius: 5px;
   margin: 2rem 0;
   max-width: 1200px;
   min-width: 750px;
-  position: relative;
-}
-.singlePageContent .status {
-  position: absolute;
-  right: 2rem;
-  top: 1rem;
-  text-align: right;
-}
-.singlePageContent .data {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.singlePageContent span {
-  border: 1px solid var(--light-grey);
-  border-radius: 30px;
-  margin-right: 0.5rem;
-  padding: 0rem 0.5rem;
-  display: inline-block;
-  font-size: 0.8rem;
-}
-.singlePageContent .contactDetails p {
-  text-align: right;
-}
-.singlePageContent .role {
-  margin: 1rem 0;
-}
-.singlePageContent .management {
-  background-color: var(--light-grey);
-  padding: 1rem;
-  border-radius: 5px;
 }
 
-.lessImportant {
-  font-style: italic;
-  font-size: 0.8rem;
+.singlePageContent .status {
+  text-align: right;
+  align-self: flex-start;
+  right: 1rem;
+  top: 1rem;
+  width: 50%;
+}
+
+.singlePageContent .status p {
+  text-align: right;
+}
+
+h2 {
+  color: #1f2f87;
+}
+
+.singlePageContent .data {
+  align-self: flex-start;
+  right: 1rem;
+  top: 1rem;
+  width: 100%;
+}
+
+.singlePageContent .data p {
+  text-align: left;
 }
