@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import useAxiosRequest from '../../utilities/useAxios';
 import { useNavigate } from 'react-router-dom';
 import { calcYearsWorked } from "../../utilities/yearsCalc";
 import { getDepartmentClass } from "../../utilities/styleUtils";
@@ -16,17 +17,29 @@ const EmployeeCard = ({ startDate, department, name, location, role, id }) => {
     const isProbation = yearsWorked < 0.5;
     const isAnniversary = yearsWorked > 0 && yearsWorked % 5 === 0;
 
+    const { update } = useAxiosRequest("http://localhost:3002/");
+
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setPerson((prevState) => ({ ...prevState, [name]: value }));
     };
+
+    const handleSave = async () => {
+        try {
+            await update(`employeesData/${id}`, person); // uses patch to update the  employee with the correct id
+            setIsEditing(false); // This is to exit edit mode
+        } catch (error) {
+            console.error("Error saving employee data:", error);
+        }
+    };
+
 
     const renderEditableField = (value, name) => {
         const capitalizeWords = (text) => {
             return text
                 .toString()
                 .split() // split the text
-                .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()) // Capitalize each word
+                .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()) // decapitalize each word
                 .join(" "); // join the words to a string
         };
 
@@ -90,11 +103,14 @@ const EmployeeCard = ({ startDate, department, name, location, role, id }) => {
                         onClick={() => setPromotedRole((prev) => !prev)}
                         text={promotedRole ? "Demote" : "Promote"}
                     />
+
+
                     <Button
-                        onClick={() => setIsEditing((prev) => !prev)}
+                        onClick={isEditing ? handleSave : () => setIsEditing(true)}
                         text={isEditing ? "Save" : "Edit"}
                         role="secondary"
                     />
+
                     <Button
                         onClick={() => navigate(`/employeesData/${id}`)}
                         text={"Show details"}
