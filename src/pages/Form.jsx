@@ -20,9 +20,9 @@ const Form = () => {
     const [successMessage, setSuccessMessage] = useState(null);
     const navigate = useNavigate();
 
-    const { post } = useAxiosRequest("http://localhost:3002/");
+    const { post, get } = useAxiosRequest("http://localhost:3002/");
 
-    // Update form state when an input changes
+    // Update the form state when an input changes
     const changeHandler = (e) => {
         const { name, value } = e.target;
         setFormData((prev) => ({
@@ -35,18 +35,37 @@ const Form = () => {
     const resetForm = () => setFormData(initialFormData);
 
 
-    // Submit form data
-    const submitHandler = (e) => {
+    // Submit the form data
+    const submitHandler = async (e) => {
         e.preventDefault();
 
+
         try {
-            post("employeesData", formData);
+
+            // checking for the next id
+            const employees = await get("employeesData");
+            const maxId = employees.map((emp) => parseInt(emp.id, 10)).filter((id) => !isNaN(id)).reduce((max, current) => Math.max(max, current), 0); // convert ids to numbers, taking in only Numbers, check for highest id
+            const nextId = maxId + 1;
+
+            const newFormData = { ...formData, id: String(nextId) }; // posting the new entry to db.json with id as a string
+            await post("employeesData", newFormData); // Formulardaten mit neuer ID senden
+
             setSuccessMessage("New employee added successfully!");
             resetForm();
-        } catch {
+        } catch (error) {
+            console.error("Error adding employee:", error);
             setSuccessMessage("Failed to add new employee. Please retry.");
         }
     };
+
+    /*         try {
+                post("employeesData", formData);
+                setSuccessMessage("New employee added successfully!");
+                resetForm();
+            } catch {
+                setSuccessMessage("Failed to add new employee. Please retry.");
+            }
+        }; */
 
 
     return (
@@ -56,36 +75,36 @@ const Form = () => {
 
                     <h2>Add new employee</h2>
                     <label htmlFor="name">Name</label>
-                    <input type="text" name="name" />
+                    <input type="text" id="name" name="name" />
 
                     <label htmlFor="role">Role</label>
-                    <input type="text" name="role" />
+                    <input type="text" id="role" name="role" />
 
                     <label htmlFor="department">Department</label>
-                    <input type="text" name="department" />
+                    <input type="text" id="department" name="department" />
 
                     <label htmlFor="superior">Superior</label>
-                    <input type="text" name="superior" placeholder="Full Name" />
+                    <input type="text" id="superior" name="superior" placeholder="Full Name" />
 
                     <label htmlFor="startDate">Start Date</label>
-                    <input type="date" name="startDate" />
+                    <input type="date" id="startDate" name="startDate" />
 
                     <label htmlFor="location">Location</label>
-                    <select name="location" required>
+                    <select id="location" name="location" required>
                         <option value="Pasila">Pasila</option>
                         <option value="City-Center">City-Center</option>
                         <option value="Espoo">Espoo</option>
                     </select>
 
                     <label htmlFor="emergencyContact">Emergency Contact</label>
-                    <input type="text" name="emergencyContact" placeholder="Full Name and telephone number" />
+                    <input type="text" id="emergencyContact" name="emergencyContact" placeholder="Full Name and telephone number" />
 
                     <label htmlFor="trainings">Trainings</label>
-                    <input type="text" name="trainings" placeholder="e.g., React, MUI"
+                    <input type="text" id="trainings" name="trainings" placeholder="e.g., React, MUI"
                         required />
 
                     <label htmlFor="performanceGrade">Performance Grade</label>
-                    <input type="text" name="performanceGrade" />
+                    <input type="text" id="performanceGrade" name="performanceGrade" />
 
                     <Button text="Add new" type="submit" />
                 </form>
