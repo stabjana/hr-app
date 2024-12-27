@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Login = ({ loginHandler }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [isLoggedIn, setisLoggedIn] = useState(false);
+  //const [isLoggedIn, setisLoggedIn] = useState(false);
   const navigate = useNavigate();
 
   const checkCredentials = (e) => {
@@ -17,7 +17,7 @@ const Login = ({ loginHandler }) => {
     ) {
       loginHandler();
       navigate("/employeesData");
-      setisLoggedIn(true);
+      //setisLoggedIn(true);
     }
     else {
       alert("use correct credentials");

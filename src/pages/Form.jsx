@@ -1,4 +1,5 @@
-import { useState, useNavigate } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import useAxiosRequest from "../utilities/useAxios";
 import Button from "../components/Button/Button";
 import styles from "./Form.module.css";
@@ -17,9 +18,9 @@ const initialFormData = {
 const Form = () => {
     const [formData, setFormData] = useState(initialFormData);
     const [successMessage, setSuccessMessage] = useState(null);
-    const navigate = useNavigate;
+    const navigate = useNavigate();
 
-    const { create } = useAxiosRequest("http://localhost:3002/");
+    const { post } = useAxiosRequest("http://localhost:3002/");
 
     // Update form state when an input changes
     const changeHandler = (e) => {
@@ -39,7 +40,7 @@ const Form = () => {
         e.preventDefault();
 
         try {
-            create("employeesData", formData);
+            post("employeesData", formData);
             setSuccessMessage("New employee added successfully!");
             resetForm();
         } catch {
