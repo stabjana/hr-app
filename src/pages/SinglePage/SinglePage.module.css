@@ -14,13 +14,14 @@
 .singlePageContent .status {
   text-align: right;
   align-self: flex-start;
-  right: 1rem;
-  top: 1rem;
   width: 50%;
+  margin-top: 3rem;
 }
 
 .singlePageContent .status p {
   text-align: right;
+  margin-right: 2rem;
+  font-style: italic;
 }
 
 h2 {

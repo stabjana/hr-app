@@ -32,13 +32,13 @@ const SinglePage = () => {
             <h2>{data.name}</h2>
             <div className={styles.data} >
 
-              <p>Role: {data.role}</p>
-              <p>Department: {data.department}</p>
-              <p>Superior: {data.superior}</p>
-              <p>Location: {data.location}</p>
-              <p>Finished trainings: {data.trainings}</p>
-              <p>Overall performance: {data.performanceGrade}</p>
-              <p>Emergency contact: {data.emergencyContact}</p>
+              <p>Role: <strong>{data.role}</strong></p>
+              <p>Department: <strong>{data.department}</strong></p>
+              <p>Superior: <strong>{data.superior}</strong></p>
+              <p>Location: <strong>{data.location}</strong></p>
+              <p>Finished trainings: <strong>{data.trainings}</strong></p>
+              <p>Overall performance: <strong>{data.performanceGrade}</strong></p>
+              <p>Emergency contact: <strong>{data.emergencyContact}</strong></p>
             </div>
           </div>
           <div className={styles.status} >
