@@ -102,6 +102,7 @@ const EmployeeCard = ({ startDate, department, name, location, role, id }) => {
                     <Button
                         onClick={() => setPromotedRole((prev) => !prev)}
                         text={promotedRole ? "Demote" : "Promote"}
+                        role="secondary"
                     />
 
 
@@ -114,7 +115,7 @@ const EmployeeCard = ({ startDate, department, name, location, role, id }) => {
                     <Button
                         onClick={() => navigate(`/employeesData/${id}`)}
                         text={"Show details"}
-                        role="secondary"
+
                     />
                 </div>
                 <p className="years">

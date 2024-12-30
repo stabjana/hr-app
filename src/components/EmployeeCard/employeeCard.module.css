@@ -36,7 +36,6 @@ input {
     border-radius: 5px;
 }
 
-
 .cardIcons {
     position: absolute;
     right: 0;
@@ -68,7 +67,6 @@ input {
     font-size: 0.8rem;
 }
 
-/* Card main area part*/
 .cardContent {
     display: flex;
     align-items: flex-start;
@@ -90,12 +88,16 @@ input {
     flex: 1;
     align-self: end;
     display: flex;
+    margin-right: 5rem;
 }
 
 .cardImage img {
     object-fit: cover;
     width: 50%;
     margin: 1rem;
+    padding: 0.5rem;
+    border: 0.5rem solid #005872;
+    border-radius: 50%;
 }
 
 .role {
@@ -112,9 +114,6 @@ input {
     padding: inherit;
     margin: inherit;
 }
-
-/* Card footer part*/
-
 
 .cardFooter {
     display: flex;

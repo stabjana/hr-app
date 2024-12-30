@@ -1,12 +1,11 @@
 import { useState } from "react";
-import Button from "../components/Button/Button";
 import { useNavigate } from "react-router-dom";
+import Button from "../components/Button/Button";
 
 
 const Login = ({ loginHandler }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  //const [isLoggedIn, setisLoggedIn] = useState(false);
   const navigate = useNavigate();
 
   const checkCredentials = (e) => {
@@ -17,7 +16,6 @@ const Login = ({ loginHandler }) => {
     ) {
       loginHandler();
       navigate("/employeesData");
-      //setisLoggedIn(true);
     }
     else {
       alert("use correct credentials");
@@ -44,7 +42,7 @@ const Login = ({ loginHandler }) => {
             id="password"
           />
         </div>
-        <Button text="Log in" type="submit" />
+        <Button text="Log in" type="submit" role="primary" />
       </form>
     </div>
   )
