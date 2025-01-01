@@ -13,7 +13,7 @@ const EmployeeCard = ({ startDate, department, name, location, role, id }) => {
     const navigate = useNavigate();
 
     const { update } = useAxiosRequest("http://localhost:3002/");
-    const { yearsWorked, isProbation, isAnniversary } = useEmployeeStatus(startDate);
+    const { yearsWorked, isProbation, isAnniversary } = useEmployeeStatus(startDate); // get years calc and status from custom hook instead of the yearsCalc.js
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
