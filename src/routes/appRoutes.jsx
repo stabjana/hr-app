@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
-import Root from "../pages/Root";
-import List from "../pages/List";
-import Form from "../pages/Form";
-import Login from "../pages/Login";
-import ErrorPage from "../pages/ErrorPage";
+import Root from "../pages/Root/Root.jsx";
+import List from "../pages/List/List.jsx";
+import Form from "../pages/Form/Form.jsx";
+import Login from "../pages/Login/Login.jsx";
+import ErrorPage from "../pages/ErrorPage/ErrorPage.jsx";
 import SinglePage from "../pages/SinglePage/SinglePage";
 
 
@@ -37,28 +37,4 @@ const createRoutes = (isLoggedIn, loginHandler) => {
   );
 };
 
-/* const createRoutes = createBrowserRouter(
-  [
-    {
-      path: "/",
-      element: <Root />,
-      errorElement: <ErrorPage />,
-      children: [
-        { path: "/", element: <Login /> },
-        { path: "/employeesData", element: <List /> },
-        { path: "/new", element: <Form /> },
-      ],
-    },
-  ],
-  {
-    future: {
-      v7_relativeSplatPath: true,
-      v7_fetcherPersist: true,
-      v7_normalizeFormMethod: true,
-      v7_partialHydration: true,
-      v7_skipActionErrorRevalidation: true,
-    },
-  }
-);
- */
 export default createRoutes;

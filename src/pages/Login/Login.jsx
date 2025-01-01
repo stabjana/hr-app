@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Button from "../components/Button/Button";
+import Button from "../../components/Button/Button";
 
 
 const Login = ({ loginHandler }) => {
@@ -23,8 +23,8 @@ const Login = ({ loginHandler }) => {
   };
 
   return (
-    <div /* className={styles.loginContainer} */>
-      <form /* className={styles.loginForm} */ onSubmit={checkCredentials}>
+    <div>
+      <form onSubmit={checkCredentials}>
         <p>Log in</p>
         <div>
           <label htmlFor="username">Username</label>

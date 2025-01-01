@@ -119,6 +119,18 @@
       "emergencyContact": "Chris Reed",
       "trainings": "Linux Server Management",
       "performanceGrade": "9"
+    },
+    {
+      "id": "11",
+      "name": "",
+      "role": "Hallo ",
+      "department": "",
+      "superior": "",
+      "startDate": "",
+      "location": "",
+      "emergencyContact": "",
+      "trainings": "Bier",
+      "performanceGrade": ""
     }
   ]
 }

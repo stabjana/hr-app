@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import useAxiosRequest from "../utilities/useAxios";
-import Button from "../components/Button/Button";
+import useAxiosRequest from "../../utilities/useAxios";
+import Button from "../../components/Button/Button";
 import styles from "./Form.module.css";
 
 const initialFormData = {
