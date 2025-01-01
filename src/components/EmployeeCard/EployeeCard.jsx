@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import useAxiosRequest from '../../utilities/useAxios';
 import { useNavigate } from 'react-router-dom';
-import { calcYearsWorked } from "../../utilities/yearsCalc";
 import { getDepartmentClass } from "../../utilities/styleUtils";
+import { useEmployeeStatus } from '../../hooks/useEmployeeStatus';
 import Button from '../Button/Button';
 import styles from './employeeCard.module.css'
-/* import styles from '../.Button/Button.module.css'; */
 
 const EmployeeCard = ({ startDate, department, name, location, role, id }) => {
     const [isEditing, setIsEditing] = useState(false);
@@ -13,11 +12,8 @@ const EmployeeCard = ({ startDate, department, name, location, role, id }) => {
     const [person, setPerson] = useState({ department, location, role });
     const navigate = useNavigate();
 
-    const yearsWorked = calcYearsWorked(startDate);
-    const isProbation = yearsWorked < 0.5;
-    const isAnniversary = yearsWorked > 0 && yearsWorked % 5 === 0;
-
     const { update } = useAxiosRequest("http://localhost:3002/");
+    const { yearsWorked, isProbation, isAnniversary } = useEmployeeStatus(startDate);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -61,8 +57,7 @@ const EmployeeCard = ({ startDate, department, name, location, role, id }) => {
                     {promotedRole && (
                         <div>
                             <span className="material-symbols-outlined promote">⭐</span>
-                            <p className="card-icon-message">Team Lead</p>
-                        </div>
+                            <p className="card-icon-message">Team Lead</p>                       </div>
                     )}
                     {isAnniversary && (
                         <div>
