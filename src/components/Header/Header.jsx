@@ -8,7 +8,9 @@ const Header = ({ isLoggedIn, loginHandler }) => {
 
     return (
         <header className={styles.Header}>
-            <h1>Employee dashboard</h1>
+            <Link to="/employeesData">
+                <h1>Employee dashboard</h1>
+            </Link>
             <div>
                 <nav>
                     <ul>
