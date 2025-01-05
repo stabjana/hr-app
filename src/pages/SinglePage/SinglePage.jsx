@@ -10,7 +10,7 @@ const SinglePage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const { data, loading, get } = useAxiosRequest(
+  const { data, loading, get } = useAxiosRequest( // use axios to get the employee based on the id
     `http://localhost:3002/employeesData/${id}`
   );
 

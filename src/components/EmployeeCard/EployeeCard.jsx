@@ -29,7 +29,7 @@ const EmployeeCard = ({ startDate, department, name, location, role, id }) => {
         }
     };
 
-
+    // edit the card content
     const renderEditableField = (value, name) => {
         const capitalizeWords = (text) => {
             return text
