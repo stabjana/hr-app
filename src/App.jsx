@@ -1,20 +1,25 @@
-import './App.css'
-import List from './components/EmployeeList.jsx'
-import Footer from './components/Footer.jsx'
-import Header from './components/Header.jsx'
+import { useState } from "react";
+import { RouterProvider } from "react-router-dom";
+import createRoutes from "./routes/appRoutes.jsx";
+import "./App.css";
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const loginHandler = () => {
+    setIsLoggedIn((prevState) => !prevState); // ist der aktuelle Wert von isLoggedIn, bevor der Zustand geändert wird.
+  };
+
+  const router = createRoutes(isLoggedIn, loginHandler);
 
   return (
-    <>
-      <div>
-        <Header></Header>
-        <List></List>
-        <Footer></Footer>
-      </div>
-
-    </>
-  )
+    <RouterProvider
+      router={router}
+      future={{
+        v7_startTransition: true,
+      }}
+    />
+  );
 }
 
-export default App
+export default App;

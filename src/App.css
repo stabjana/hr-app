@@ -4,3 +4,13 @@
   padding: 2rem;
   text-align: center;
 }
+
+main {
+  min-height: calc(100vh - 180px);
+  padding: 2rem;
+}
+
+main p {
+  font-size: 1.2rem;
+  text-align: center;
+}

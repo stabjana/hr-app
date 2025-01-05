@@ -1,0 +1,40 @@
+.singlePageContent {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: aliceblue;
+  padding: 2rem;
+  color: #010830;
+  border-radius: 5px;
+  margin: 2rem 0;
+  max-width: 1200px;
+  min-width: 750px;
+}
+
+.singlePageContent .status {
+  text-align: right;
+  align-self: flex-start;
+  width: 50%;
+  margin-top: 3rem;
+}
+
+.singlePageContent .status p {
+  text-align: right;
+  margin-right: 2rem;
+  font-style: italic;
+}
+
+h2 {
+  color: #1f2f87;
+}
+
+.singlePageContent .data {
+  align-self: flex-start;
+  right: 1rem;
+  top: 1rem;
+  width: 100%;
+}
+
+.singlePageContent .data p {
+  text-align: left;
+}
