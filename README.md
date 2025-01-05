@@ -39,8 +39,6 @@ I learned to use:
 - how to use custom Hooks (useAxios and useEmployeeStatus)
 - how to organize the files in an uderstandable way
 
-### Bug List
-
 ### Acknoledgements
 
 Parts of the code and part of the styling is written by Margit Tennosaar and customized by Steffi Jana.
