@@ -75,7 +75,7 @@ const Form = () => {
 
                     <h2>Add new employee</h2>
                     <label htmlFor="name">Name</label>
-                    <input type="text" id="name" name="name" />
+                    <input type="text" id="name" name="name" required />
 
                     <label htmlFor="role">Role</label>
                     <input type="text" id="role" name="role" />

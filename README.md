@@ -22,6 +22,7 @@ A custom hook useEmployeeStatus handles the data that shows the status of the em
 - copy the address of the local host to your browser `http://localhost:5173/`
 - now you can see the website
 - to terminate the server press ctrl + c in the vs code terminal
+- log in with username: steffi and password: test
 
 ### Reflection
 
@@ -41,7 +42,6 @@ I learned to use:
 ### Bug List
 
 - Log out Button is not functioning
-- Added employee doesn't have a picture
 
 ### Acknoledgements
 
