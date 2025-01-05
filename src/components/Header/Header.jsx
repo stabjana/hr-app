@@ -3,8 +3,7 @@ import Button from "../Button/Button";
 import styles from "./Header.module.css";
 
 const Header = ({ isLoggedIn, loginHandler }) => {
-    //const buttonText = isLoggedIn ? "Log out" : "Log in";
-    const buttonText = "Log out";
+    const buttonText = isLoggedIn ? "Log out" : "Log in";
 
     return (
         <header className={styles.Header}>

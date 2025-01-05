@@ -41,8 +41,6 @@ I learned to use:
 
 ### Bug List
 
-- Log out Button is not functioning
-
 ### Acknoledgements
 
 Parts of the code and part of the styling is written by Margit Tennosaar and customized by Steffi Jana.
