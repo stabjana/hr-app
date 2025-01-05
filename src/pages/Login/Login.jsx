@@ -18,7 +18,7 @@ const Login = ({ loginHandler }) => {
       navigate("/employeesData");
     }
     else {
-      alert("use correct credentials");
+      alert("use correct username and password");
     }
   };
 

@@ -3,7 +3,7 @@ import './footer.css'
 function Footer() {
     return (
         <footer>
-            <p>Copyright &copy; Steffi</p>
+            <p>Copyright &copy; Steffi Jana & Margit Tennosaar</p>
         </footer>
     );
 };
