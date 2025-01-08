@@ -2,6 +2,8 @@
 
 ## Here we practice React
 
+This is my very first React app.
+
 ### Core features
 
 This app helps you to manage all employees - it displays an employees list with their core properties  
