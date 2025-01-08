@@ -42,3 +42,8 @@ I learned to use:
 ### Acknoledgements
 
 Parts of the code and part of the styling is written by Margit Tennosaar and customized by Steffi Jana.
+
+### Deploying the website
+
+For Deploying the site I used netlify and to host the server I used render. You can visit the page on:
+https://sjana-hr.netlify.app/
