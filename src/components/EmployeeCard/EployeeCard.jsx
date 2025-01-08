@@ -12,7 +12,7 @@ const EmployeeCard = ({ startDate, department, name, location, role, id }) => {
     const [person, setPerson] = useState({ department, location, role });
     const navigate = useNavigate();
 
-    const { update } = useAxiosRequest("http://localhost:3002/");
+    const { update } = useAxiosRequest("https://hr-db-web.onrender.com/api/");
     const { yearsWorked, isProbation, isAnniversary } = useEmployeeStatus(startDate); // get years calc and status from custom hook instead of the yearsCalc.js
 
     const handleInputChange = (e) => {

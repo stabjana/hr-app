@@ -11,7 +11,7 @@ const SinglePage = () => {
   const navigate = useNavigate();
 
   const { data, loading, get } = useAxiosRequest( // use axios to get the employee based on the id
-    `http://localhost:3002/employeesData/${id}`
+    `https://hr-db-web.onrender.com/api/employeesData/${id}`
   );
 
   useEffect(() => {

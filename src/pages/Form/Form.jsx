@@ -20,7 +20,7 @@ const Form = () => {
     const [successMessage, setSuccessMessage] = useState(null);
     const navigate = useNavigate();
 
-    const { post, get } = useAxiosRequest("http://localhost:3002/");
+    const { post, get } = useAxiosRequest("https://hr-db-web.onrender.com/api/");
 
     // Update the form state when an input changes
     const changeHandler = (e) => {

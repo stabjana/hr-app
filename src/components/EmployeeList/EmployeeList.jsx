@@ -10,7 +10,7 @@ const EmployeeList = () => {
         loading,
         error,
         get,
-    } = useAxiosRequest("http://localhost:3002/");
+    } = useAxiosRequest("https://hr-db-web.onrender.com/api/");
 
     useEffect(() => {
         get("employeesData");
