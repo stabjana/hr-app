@@ -47,3 +47,7 @@ Parts of the code and part of the styling is written by Margit Tennosaar and cus
 
 For Deploying the site I used netlify and to host the server I used render. You can visit the page on:
 https://sjana-hr.netlify.app/
+
+# SonarQube badge
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=stabjana_hr-app&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=stabjana_hr-app)
